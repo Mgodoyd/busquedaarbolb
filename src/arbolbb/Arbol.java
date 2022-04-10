@@ -131,7 +131,7 @@ public class Arbol {
  }
 }
 //buscar nodo
- public void buscar_nodo(int elemento) {
+ public void buscar(int elemento) {
         NodoB r = root;
         buscar(elemento,r);
     }
