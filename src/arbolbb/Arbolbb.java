@@ -28,7 +28,7 @@ public class Arbolbb {
             arbolB.insertar(valoresUno[i]);
         }
       arbolB.imprimir();
-      arbolB.buscar();
+      arbolB.buscar_nodo(25);
     }
     
     
