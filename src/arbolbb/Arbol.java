@@ -131,22 +131,27 @@ public class Arbol {
  }
 }
 //buscar nodo
-public void buscar(){
- buscar(this.root);
-}
-private void buscar(NodoB n){
-    for (int i = 0; i < n; i++) {
-            if (key[i] == n) {
-                return i;
-                System.out.println("Si Exite LLave");
-            }else
-            {
-             System.out.println("No Exite LLave");       
+ public void buscar_nodo(int elemento) {
+        NodoB r = root;
+        buscar(elemento,r);
+    }
+    
+    private void buscar(int elemento,NodoB n){
+        
+        int v=n.find(elemento);
+        if(v!=-1){
+            System.out.println("El nodo "+elemento+" esta en la posicion "+v);
         }
-       return null;
-    } 
-  }
-}
+        n.find(elemento);
+        if(!n.leaf){
+            for(int j=0; j<=n.n;j++){
+                if(n.child[j]!=null){
+                    buscar(elemento,n.child[j]);
+                }
+            }
+        }
+    }
+    
 
 /*
 *   La solucion seria ejecutar un if que cuando se ingrese el 5(child) y el 4(child) en este caso
